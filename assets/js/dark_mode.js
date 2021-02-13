@@ -1,34 +1,28 @@
-
-
-
-
-
-const themeToggle = document.querySelector(
-    '.theme-switch input[type="checkbox"]'
-  );
   
+const temaToggle = document.querySelector(
+  '.theme-switch input[type="checkbox"]'
+);
+
+const temaAtual = localStorage.getItem("tema");
+
+if (temaAtual) {
   
-  const currentTheme = localStorage.getItem("theme");
+  document.documentElement.setAttribute("data-tema", temaAtual);
 
-  if (currentTheme) {
-    
-    document.documentElement.setAttribute("data-theme", currentTheme);
-
-    if (currentTheme === "dark") {
-      themeToggle.checked = true;
-    }
+  if (temaAtual === "dark") {
+    temaToggle.checked = true;
   }
-  
- 
-  function switchTheme(e) {
-    if (e.target.checked) {
-      document.documentElement.setAttribute("data-theme", "dark");
-      localStorage.setItem("theme", "dark");
-    } else {
-      document.documentElement.setAttribute("data-theme", "light");
-      localStorage.setItem("theme", "light");
-    }
+}
+
+
+function switchTema(e) {
+  if (e.target.checked) {
+    document.documentElement.setAttribute("data-tema", "dark");
+    localStorage.setItem("tema", "dark");
+  } else {
+    document.documentElement.setAttribute("data-tema", "light");
+    localStorage.setItem("tema", "light");
   }
-  
-  themeToggle.addEventListener("change", switchTheme, false);
-  
+}
+
+temaToggle.addEventListener("change", switchTema, false);

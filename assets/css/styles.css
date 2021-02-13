@@ -7,6 +7,14 @@
   --font-color-4: #fff;
 }
 
+[data-theme=dark] {
+  --bg-color: rgb(17, 17, 17);
+  --font-color: #f5f5f5;
+  --font-color-2: #57269f;
+  --font-color-3: #c0c0c0;
+  --font-color-4: #fff;
+}
+
 /*Reset*/
 * {
   margin: 0;
